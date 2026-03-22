@@ -50,23 +50,23 @@
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.34 0.15 24);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.34 0.15 24);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.34 0.15 24);
+  --primary: oklch(0.57 0.22 27);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.98 0.02 18);
+  --secondary-foreground: oklch(0.43 0.17 25);
+  --muted: oklch(0.98 0.02 18);
+  --muted-foreground: oklch(0.56 0.12 24);
+  --accent: oklch(0.96 0.03 19);
+  --accent-foreground: oklch(0.42 0.17 25);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.9 0.04 23);
+  --input: oklch(0.9 0.04 23);
+  --ring: oklch(0.63 0.19 26);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -74,13 +74,13 @@
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.34 0.15 24);
+  --sidebar-primary: oklch(0.57 0.22 27);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-accent: oklch(0.96 0.03 19);
+  --sidebar-accent-foreground: oklch(0.42 0.17 25);
+  --sidebar-border: oklch(0.9 0.04 23);
+  --sidebar-ring: oklch(0.63 0.19 26);
 }
 
 .dark {
@@ -219,6 +219,104 @@
 
   .animate-falling-love {
     animation-name: falling-love;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes intro-shine {
+    0% {
+      transform: translateX(-120%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    45% {
+      transform: translateX(220%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(220%);
+      opacity: 0;
+    }
+  }
+
+  .animate-intro-shine {
+    animation: intro-shine 3.4s ease-in-out infinite;
+  }
+
+  @keyframes intro-dragon-left {
+    0% {
+      transform: scale(0.88) rotate(30deg);
+      opacity: 0;
+      filter: blur(0px);
+    }
+    28% {
+      opacity: 0.28;
+      filter: blur(0.5px);
+    }
+    68% {
+      transform: scale(1.24) rotate(30deg);
+      opacity: 0.14;
+      filter: blur(4px);
+    }
+    100% {
+      transform: scale(1.44) rotate(30deg);
+      opacity: 0;
+      filter: blur(10px);
+    }
+  }
+
+  @keyframes intro-dragon-right {
+    0% {
+      transform: scale(0.88) rotate(-30deg);
+      opacity: 0;
+      filter: blur(0px);
+    }
+    28% {
+      opacity: 0.28;
+      filter: blur(0.5px);
+    }
+    68% {
+      transform: scale(1.24) rotate(-30deg);
+      opacity: 0.14;
+      filter: blur(4px);
+    }
+    100% {
+      transform: scale(1.44) rotate(-30deg);
+      opacity: 0;
+      filter: blur(10px);
+    }
+  }
+
+  .animate-intro-dragon-left {
+    animation: intro-dragon-left 4.8s ease-out infinite;
+  }
+
+  .animate-intro-dragon-right {
+    animation: intro-dragon-right 4.8s ease-out 0.35s infinite;
+  }
+
+  @keyframes intro-hi-rise {
+    0% {
+      transform: translate3d(0, 12vh, 0) scale(0.92) rotate(0deg);
+      opacity: 0;
+    }
+    12% {
+      opacity: 0.62;
+    }
+    55% {
+      transform: translate3d(10px, -46vh, 0) scale(1) rotate(8deg);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate3d(-8px, -120vh, 0) scale(1.06) rotate(-10deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-intro-hi-rise {
+    animation-name: intro-hi-rise;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
